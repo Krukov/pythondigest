@@ -377,7 +377,7 @@ class ItemModeratorAdmin(admin.ModelAdmin):
                     pk__gt=current_issue.last_item,
                 )
         except AssertionError:
-            result = super(ItemModeratorAdmin).get_queryset(request)
+            result = super(ItemModeratorAdmin, self).get_queryset(request)
         return result
 
     external_link = lambda s, obj: _external_link(obj)
